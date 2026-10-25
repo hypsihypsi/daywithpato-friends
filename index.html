@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kde mám kľúče?! – kamošská verzia</title>
+<link rel="stylesheet" href="style.css?v=1792930156">
+</head>
+<body>
+<canvas id="game" aria-label="Herný svet – kliknutím alebo dotykom určíš cieľ"></canvas>
+
+<div id="bubbles" aria-hidden="true"></div>
+
+<div id="hud">
+  <div id="hero" class="panel">
+    <div id="portrait"></div>
+    <div id="stats"></div>
+  </div>
+  <div id="pets">
+    <span class="chip dog"><span class="ic">🐕</span><b>Bundáš</b><span class="st">doma</span></span>
+    <span class="chip kid"><span class="ic">👧</span><b>Nelka</b><span class="st">doma</span></span>
+  </div>
+
+  <div id="clock" class="panel">
+    <div id="day">Pondelok • deň 1</div>
+    <div id="time">06:30</div>
+    <div class="sub"><span id="weather">☀️</span><span id="daytype">Dnes: ???</span></div>
+  </div>
+
+  <div id="quests" class="panel interactive"></div>
+
+  <div id="mmwrap">
+    <canvas id="minimap" width="220" height="220" aria-label="Minimapa"></canvas>
+    <div id="street"></div>
+  </div>
+
+  <div id="prompt" class="panel hidden" role="status" aria-live="polite"></div>
+
+  <div id="cardash" class="panel hidden"></div>
+
+  <div id="toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+  <div id="fxpops"></div>
+  <div id="hyper" class="hidden"></div>
+</div>
+
+<div id="bigmap" class="hidden" aria-label="Mapa mesta">
+  <div class="panel bm">
+    <div class="bmh"><h2>Mapa mesta</h2><span class="hint"><kbd>M</kbd> / <kbd>Esc</kbd> zavrieť</span></div>
+    <canvas id="bigmapCanvas" width="700" height="500"></canvas>
+    <div class="legend">
+      <span><i class="d pl"></i>Paťo</span><span><i class="d car"></i>Fabia</span><span><i class="d kid"></i>Nelka</span>
+      <span><i class="d dog"></i>Bundáš</span><span><i class="d tgt"></i>aktívny cieľ</span><span><i class="d oth"></i>ostatné úlohy</span>
+    </div>
+  </div>
+</div>
+
+<div id="touchControls" aria-label="Dotykové ovládanie">
+  <div class="touch-dpad">
+    <button type="button" class="touch-btn up" data-code="ArrowUp" aria-label="Dopredu">▲</button>
+    <button type="button" class="touch-btn left" data-code="ArrowLeft" aria-label="Doľava">◀</button>
+    <button type="button" class="touch-btn down" data-code="ArrowDown" aria-label="Dozadu">▼</button>
+    <button type="button" class="touch-btn right" data-code="ArrowRight" aria-label="Doprava">▶</button>
+  </div>
+  <div class="touch-actions">
+    <button type="button" class="touch-btn secondary" data-code="KeyF" aria-label="Mobil">📱</button>
+    <button type="button" class="touch-btn secondary" data-code="Tab" aria-label="Prepnúť úlohu">↻</button>
+    <button type="button" class="touch-btn secondary" data-code="KeyN" aria-label="Pripnúť úlohu">N</button>
+    <button type="button" class="touch-btn secondary" data-code="KeyR" aria-label="Vyslobodiť auto">R</button>
+    <button type="button" class="touch-btn secondary" data-code="KeyM" aria-label="Mapa">M</button>
+    <button type="button" class="touch-btn secondary" data-code="KeyH" aria-label="Zapískať na Bundáša">H</button>
+    <button type="button" class="touch-btn brake" data-code="Space" aria-label="Ručná brzda">BRZDA</button>
+    <button type="button" class="touch-btn action" data-code="KeyE" aria-label="Interakcia">E</button>
+  </div>
+</div>
+
+<div id="smsbar" aria-live="assertive"></div>
+<div id="ring" class="hidden" role="dialog" aria-label="Prichádzajúci hovor"></div>
+
+<div id="modal" class="hidden"><div id="modalBox"></div></div>
+<div id="start" class="hidden"></div>
+
+<script src="src/config.js?v=1792930156"></script>
+<script src="src/audio.js?v=1792930156"></script>
+<script src="src/map.js?v=1792930156"></script>
+<script src="src/render2d.js?v=1792930156"></script>
+<script src="src/actors.js?v=1792930156"></script>
+<script src="src/events.js?v=1792930156"></script>
+<script src="src/ui.js?v=1792930156"></script>
+<script src="src/main.js?v=1792930156"></script>
+</body>
+</html>
